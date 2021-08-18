@@ -1,0 +1,5 @@
+app_python/.benchmarks
+app_python/.pytest_cache
+app_python/venv
+app_python/.coverage
+app_python/__pycache__
