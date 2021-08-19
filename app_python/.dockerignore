@@ -1,0 +1,9 @@
+__pycache__
+venv
+.pytest_cache
+DOCKER.md
+Dockerfie
+PYTHON.md
+setup.py
+test.py
+.dockerignore
