@@ -4,7 +4,7 @@ appdirs==1.4.4
 attrs==21.2.0
 black==21.7b0
 certifi==2021.5.30
-click==4.1
+click
 colorama==0.4.4
 flake8==3.9.2
 h11==0.12.0
@@ -26,7 +26,6 @@ pluggy==0.13.1
 py==1.10.0
 pycodestyle==2.7.0
 pyflakes==2.3.1
-pymarkdownlint==0.3.1
 pyparsing==2.4.7
 pytest==6.2.4
 pytz==2021.1
