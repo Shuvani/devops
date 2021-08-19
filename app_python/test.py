@@ -8,5 +8,5 @@ def test__get__moscow__time__returns__string():
 
 
 def test__index__get_request__returns_200():
-    request, response = app.test_client.get("/v2.0.0/")
+    request, response = app.test_client.get("/v2.0.2/")
     assert response.status == 200
