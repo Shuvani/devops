@@ -7,17 +7,29 @@ This is the web application which shows the current Moscow time when you reload 
 - python
 - Sanic - python web server and web framework
 
-## Getting started
-To get a local copy up and running follow these simple steps.
-- clone the repo
-- cd devops/app_python
-- python3 -m venv venv
-- source venv/bin/activate
-- pip install -r requirements.txt
+## Getting started by hands
+To get a local copy up and running follow these simple steps:
+```
+clone the repo
+cd devops/app_python
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
 
 ## Usage
-- python3 main.py
-- open http://0.0.0.0:8000/v1.0.0/ in the browser
+```
+python3 main.py
+```
+open http://0.0.0.0:8000/v2.0.0/ in the browser
+
+## Getting started with Docker
+```
+docker pull shuvani/moscow_time:latest
+docker run -it shuvani/moscow_time:latest
+docker run -p 8000:8000 shuvani/moscow_time:latest
+```
+open http://0.0.0.0:8000/v2.0.0/ in the browser
 
 ## Contributing
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are greatly appreciated.
