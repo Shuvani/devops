@@ -1,12 +1,13 @@
-FROM python:3
+FROM python:3-slim
 LABEL maintainer="a.gorb@innopolis.university"
 
-WORKDIR /app_python
-COPY requirements.txt /app_python/requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
+RUN useradd user
+USER user
+WORKDIR /tmp
 
-COPY . /app_python
+COPY ./requirements.txt /tmp
+RUN pip install --target=/tmp --no-cache-dir -r /tmp/requirements.txt
+COPY . /tmp
 
 EXPOSE 8000
-
-ENTRYPOINT ["python3", "main.py"]
+CMD ["python3", "main.py"]

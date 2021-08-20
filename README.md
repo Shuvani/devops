@@ -21,14 +21,14 @@ pip install -r requirements.txt
 ```
 python3 main.py
 ```
-open http://0.0.0.0:8000/v2.0.4/ in the browser
+open http://0.0.0.0:8000/v2.0.5/ in the browser
 
 ## Getting started with Docker
 ```
-docker pull shuvani/moscow_time:latest
-docker run -p 8000:8000 shuvani/moscow_time:latest
+docker pull shuvani/moscow_time:v2.0.5
+docker run -p 8000:8000 shuvani/moscow_time:v2.0.5
 ```
-open http://0.0.0.0:8000/v2.0.4/ in the browser
+open http://0.0.0.0:8000/v2.0.5/ in the browser
 
 ## Contributing
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are greatly appreciated.
