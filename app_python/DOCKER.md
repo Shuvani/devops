@@ -14,6 +14,9 @@
 - No confidential data leaks
 - Use COPY instead of ADD
 - Dockerignore
+- do not use root user
+- CMD instead of the ENTRYPOINT
+- tags with versions
 - **hadolint** as Dockerfile linter
 ```
 hadolint Dockerfile
