@@ -2,6 +2,7 @@ name: Test moscow time project
 
 on:
   push:
+    branches: [ main ]
   pull_request:
     branches: [ main ]
 
