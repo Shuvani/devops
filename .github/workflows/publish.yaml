@@ -23,4 +23,4 @@ jobs:
       with:
         context: app_python/
         push: true
-        tags: ${{ secrets.DOCKER_USER }}/moscow_time:$VERSION
+        tags: ${{ secrets.DOCKER_USER }}/moscow_time:${{ env.VERSION }}
