@@ -49,3 +49,16 @@ I installed *pymarkdownlint*
 '''
 markdownlint PYTHON.md
 '''
+
+# Unit test best practices
+- Simple as possible
+- Do not depend on other tests
+- Fast
+- Do not duplicate implementation logic
+- Readable
+- Deterministic
+- Part of the build process
+- Namings are representative
+- Fail only if the code is broken
+- Verify a single use case
+- Isolated
