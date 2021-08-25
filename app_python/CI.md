@@ -1,6 +1,7 @@
 # GitHub Actions CI best practices
 - Minimal
 - No unnecessary dependencies
+- Use of caching mechanism  
 - No hardcoded secrets
 - Limit environment variables to the narrowest possible scope
 - Store authors in Action metadata to promote code ownership
