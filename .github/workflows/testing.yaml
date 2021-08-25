@@ -1,6 +1,4 @@
 name: Test moscow time project
-author: Anna Gorb
-description: This action tests the application after each push or pull request in main branch
 
 on:
   push:

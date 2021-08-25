@@ -1,6 +1,4 @@
 name: Redeploy moscow time project
-author: Anna Gorb
-description: This action deploys the application in the docker
 
 on:
   push:
