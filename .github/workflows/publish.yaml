@@ -11,11 +11,9 @@ jobs:
     runs-on: ubuntu-20.04
     env:
       REPO: ${{ secrets.DOCKER_REPO }}
+      VERSION: $(sed -n 's/version=//p' setup.py | sed 's/"//' | sed 's/",//g')
     steps:
     - uses: actions/checkout@v2
-    - name: Set variables
-      env:
-        VERSION: $(sed -n 's/version=//p' setup.py | sed 's/"//' | sed 's/",//g')
     - name: Login to Docker Hub
       run: docker login -u ${{ secrets.DOCKER_USER }}
           -p ${{ secrets.DOCKER_PASS }}
