@@ -17,9 +17,14 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
+## Testing
+```
+app_python$ pytest test.py
+```
+
 ## Usage
 ```
-python3 main.py
+app_python$ python3 main.py
 ```
 open http://0.0.0.0:8000/v2.0.6/ in the browser
 
