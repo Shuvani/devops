@@ -1,4 +1,4 @@
-name: Redeploy moscow time project
+name: Publish moscow time project
 
 on:
   push:
