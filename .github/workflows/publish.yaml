@@ -3,7 +3,7 @@ name: Redeploy moscow time project
 on:
   push:
     branches:
-      - 'release-*.*.*'
+      - 'release-*'
 
 jobs:
   docker:
