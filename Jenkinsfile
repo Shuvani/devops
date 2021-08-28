@@ -1,3 +1,5 @@
+properties([pipelineTriggers([githubPush()])])
+
 pipeline {
     agent { docker { image 'python:3-slim' } }
     stages {
