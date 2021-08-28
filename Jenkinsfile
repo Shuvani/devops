@@ -6,7 +6,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh """
-                    pip install -r app_python/requirements.txt
+                    pip install --no-cache-dir -r app_python/requirements.txt
                 """
             }
         }
