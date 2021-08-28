@@ -44,5 +44,14 @@ Contributions are what make the open source community such an amazing place to b
 4. Push to the Branch (git push origin feature/AmazingFeature)
 5. Open a Pull Request
 
+## Workflows:
+Before push or pull request in the main branch the code passes testing procedures
+
+![example workflow](https://github.com/Shuvani/devops/actions/workflows/publish.yaml/badge.svg)
+
+Before push in the release branches the application is published on the DockerHub
+
+![example workflow](https://github.com/Shuvani/devops/actions/workflows/testing.yaml/badge.svg)
+
 ## Contact
 Anna Gorb - a.gorb@innopolis.university

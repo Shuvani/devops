@@ -4,4 +4,7 @@
 - Use of caching mechanism
 - Environment variables are limited to the narrowest possible scope
 - No hardcoded secrets
-- Don’t use self-hosted runners in a public repository                                                 
+- Automatic detection of the project version  
+- Don’t use self-hosted runners in a public repository  
+  
+# Jenkins best practices
