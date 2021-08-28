@@ -4,11 +4,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                script {
-                  sh """
-                  pip install -r app_python/requirements.txt
-                  """
-                }
+              sh """
+              pip install -r app_python/requirements.txt
+              """
             }
         }
         stage('Linting') { // Run pylint against your code
