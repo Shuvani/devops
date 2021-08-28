@@ -23,7 +23,12 @@ async def index(request):
     text = "This is the current Moscow time!"
     time = get_moscow_time()
     author = "developed by Anna Gorb"
-    return jinja.render("index.html", request, text=text, time=time, author=author)
+    return jinja.render("index.html",
+                        request,
+                        text=text,
+                        time=time,
+                        author=author
+                        )
 
 
 if __name__ == "__main__":
