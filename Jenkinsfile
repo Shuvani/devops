@@ -32,7 +32,9 @@ pipeline {
                             usernameVariable: 'username',
                             passwordVariable: 'password')
                     ]) {
-                    print 'username=' + username + 'password=' + password
+                        sh """
+                            docker login -u $username -p $password
+                        """
                     }
                 }
             }
