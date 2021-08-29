@@ -5,23 +5,19 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh """
-                    pip install --no-cache-dir -r app_python/requirements.txt
-                """
+                sh 'pip install --no-cache-dir -r app_python/requirements.txt'
             }
         }
-        stage('Linting') { // Run pylint against your code
+        stage('Linting and testing') {
             steps {
-                sh """
-                    flake8 app_python/*.py
-                """
-            }
-        }
-        stage('Test') {
-            steps {
-                sh """
-                    pytest app_python/test.py
-                """
+                parallel(
+                    lint: {
+                        sh 'flake8 app_python/*.py'
+                    },
+                    test: {
+                        sh 'pytest app_python/test.py'
+                    }
+                )
             }
         }
     }
