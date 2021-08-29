@@ -8,6 +8,9 @@ pipeline {
     agent any
     stages {
         stage('Deploy') {
+            when {
+                tag '*.*.*'
+            }
             steps {
                 script {
                     dockerImage = docker.build(registry + ${TAG_NAME}, "./app_python")
