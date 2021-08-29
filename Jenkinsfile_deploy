@@ -1,5 +1,4 @@
 properties([pipelineTriggers([githubPush()])])
-def gitTag = null
 
 pipeline {
     environment {
