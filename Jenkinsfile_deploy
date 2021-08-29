@@ -2,7 +2,7 @@ properties([pipelineTriggers([githubPush()])])
 
 pipeline {
     environment {
-        registry = "shuvani/moscow_time:3.2.3"
+        registry = "shuvani/moscow_time:3.3.0"
         registryCredential = 'DockerHub'
     }
     agent any
