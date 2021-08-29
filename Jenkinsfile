@@ -10,7 +10,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    dockerImage = docker.build registry + ":0.0.0"
+                    dockerImage = docker build -t registry app_python/
                     docker.withRegistry( '', registryCredential ) {
                         dockerImage.push()
                     }
