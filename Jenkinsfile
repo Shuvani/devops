@@ -24,5 +24,18 @@ pipeline {
                 """
             }
         }
+        stage('Deploy') {
+            steps {
+                script {
+                    withCredentials([
+                        usernamePassword(credentialsId: 'DockerHub',
+                            usernameVariable: 'username',
+                            passwordVariable: 'password')
+                    ]) {
+                    print 'username=' + username + 'password=' + password
+                    }
+                }
+            }
+        }
     }
 }
