@@ -11,13 +11,14 @@ pipeline {
             steps {
                 script {
                   gitTag=sh(returnStdout: true, script: "git tag --contains | head -1").trim()
+                  env.gitTag = gitTag
                 }
             }
         }
         stage('Deploy') {
             when {
                 expression {
-                  return gitTag;
+                  return ${env.gitTag};
                 }
             }
             steps {

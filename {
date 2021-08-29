@@ -1,0 +1,70 @@
+Script started on 2021-08-30 01:20:04+03:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="154" LINES="6"]
+                  gitTag=sh(returnStdout: true, script: "git tag --contains | head -1").trim()
+                  env.gitTag = gitTag
+                }
+            }
+        }
+        stage('Deploy') {
+            when {
+                expression {
+                  return ${env.gitTag};
+                }
+            }
+            steps {
+                script {
+                    dockerImage = docker.build(registry + ${TAG_NAME}, "./app_python")
+                    docker.withRegistry( '', registryCredential ) {
+                        dockerImage.push()
+                    }
+                }
+            }
+        }
+    }
+}]0;shuva@shuva-UX310UA: ~/Projects/devops_sanic2[01;32mshuva@shuva-UX310UA[00m:[01;34m~/Projects/devops_sanic2[00m$                   gitTag=sh(returnStdout: true, script: "git tag --contains | head -1").trim()
+bash: syntax error near unexpected token `('
+]0;shuva@shuva-UX310UA: ~/Projects/devops_sanic2[01;32mshuva@shuva-UX310UA[00m:[01;34m~/Projects/devops_sanic2[00m$                   env.gitTag = gitTag
+env.gitTag: command not found
+]0;shuva@shuva-UX310UA: ~/Projects/devops_sanic2[01;32mshuva@shuva-UX310UA[00m:[01;34m~/Projects/devops_sanic2[00m$                 }
+bash: syntax error near unexpected token `}'
+]0;shuva@shuva-UX310UA: ~/Projects/devops_sanic2[01;32mshuva@shuva-UX310UA[00m:[01;34m~/Projects/devops_sanic2[00m$             }
+bash: syntax error near unexpected token `}'
+]0;shuva@shuva-UX310UA: ~/Projects/devops_sanic2[01;32mshuva@shuva-UX310UA[00m:[01;34m~/Projects/devops_sanic2[00m$         }
+bash: syntax error near unexpected token `}'
+]0;shuva@shuva-UX310UA: ~/Projects/devops_sanic2[01;32mshuva@shuva-UX310UA[00m:[01;34m~/Projects/devops_sanic2[00m$         stage('Deploy') {
+bash: syntax error near unexpected token `'Deploy''
+]0;shuva@shuva-UX310UA: ~/Projects/devops_sanic2[01;32mshuva@shuva-UX310UA[00m:[01;34m~/Projects/devops_sanic2[00m$             when {
+
+Command 'when' not found, but can be installed with:
+
+sudo apt install when
+
+]0;shuva@shuva-UX310UA: ~/Projects/devops_sanic2[01;32mshuva@shuva-UX310UA[00m:[01;34m~/Projects/devops_sanic2[00m$                 expression {
+expression: command not found
+]0;shuva@shuva-UX310UA: ~/Projects/devops_sanic2[01;32mshuva@shuva-UX310UA[00m:[01;34m~/Projects/devops_sanic2[00m$                   return ${env.gitTag};
+bash: ${env.gitTag}: bad substitution
+]0;shuva@shuva-UX310UA: ~/Projects/devops_sanic2[01;32mshuva@shuva-UX310UA[00m:[01;34m~/Projects/devops_sanic2[00m$                 }
+bash: syntax error near unexpected token `}'
+]0;shuva@shuva-UX310UA: ~/Projects/devops_sanic2[01;32mshuva@shuva-UX310UA[00m:[01;34m~/Projects/devops_sanic2[00m$             }
+bash: syntax error near unexpected token `}'
+]0;shuva@shuva-UX310UA: ~/Projects/devops_sanic2[01;32mshuva@shuva-UX310UA[00m:[01;34m~/Projects/devops_sanic2[00m$             steps {
+
+Command 'steps' not found, did you mean:
+
+  command 'step' from snap step (21.08.0)
+  command 'step' from deb step (4:19.12.3-0ubuntu1)
+
+See 'snap info <snapname>' for additional versions.
+
+]0;shuva@shuva-UX310UA: ~/Projects/devops_sanic2[01;32mshuva@shuva-UX310UA[00m:[01;34m~/Projects/devops_sanic2[00m$                 script {
+Script started, file is {
+                    dockerImage = docker.build(registry + ${TAG_NAME}, "./app_python")
+                    docker.withRegistry( '', registryCredential ) {
+                        dockerImage.push()
+                    }
+                }
+            }
+        }
+    }
+}]0;shuva@shuva-UX310UA: ~/Projects/devops_sanic2[01;32mshuva@shuva-UX310UA[00m:[01;34m~/Projects/devops_sanic2[00m$                     dockerImage = docker.build(registry + ${TAG_NAME}, "./app_python")
+bash: syntax error near unexpected token `('
+]0;shuva@shuva-UX310UA: ~/Projects/devops_sanic2[01;32mshuva@shuva-UX310UA[00m:[01;34m~/P
