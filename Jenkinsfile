@@ -1,6 +1,10 @@
 properties([pipelineTriggers([githubPush()])])
 
 pipeline {
+    environment {
+        registry = "shuvani/moscow_time"
+        registryCredential = 'DockerHub'
+    }
     agent { docker { image 'python:3-slim' } }
     stages {
         stage('Build') {
@@ -27,14 +31,9 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    withCredentials([
-                        usernamePassword(credentialsId: 'DockerHub',
-                            usernameVariable: 'username',
-                            passwordVariable: 'password')
-                    ]) {
-                        sh """
-                            docker login -u $username -p $password
-                        """
+                    docker.build registry + ":0.0.0"
+                    docker.withRegistry( '', registryCredential ) {
+                        dockerImage.push()
                     }
                 }
             }
