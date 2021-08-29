@@ -18,7 +18,6 @@ pipeline {
                         sh 'pytest app_python/test.py'
                     }
                 )
-
             }
         }
     }
