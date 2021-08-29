@@ -8,3 +8,7 @@
 - Don’t use self-hosted runners in a public repository  
   
 # Jenkins best practices
+- Don’t use older plugins for pipeline build
+- Pipeline was developed as code
+- All work is done within a logical stages
+- 
