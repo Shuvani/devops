@@ -1,4 +1,5 @@
 properties([pipelineTriggers([githubPush()])])
+def gitTag = null
 
 pipeline {
     environment {
@@ -7,9 +8,19 @@ pipeline {
     }
     agent any
     stages {
+        stage('Version') {
+            steps {
+                checkout(...)
+                script {
+                  gitTag=sh(returnStdout: true, script: "git tag --contains | head -1").trim()
+                }
+            }
+        }
         stage('Deploy') {
             when {
-                tag '*.*.*'
+                expression {
+                  return gitTag;
+                }
             }
             steps {
                 script {
