@@ -24,3 +24,14 @@
 - No large global variable declaration files
 - Store the job definition within GitHub
 - Do all work within an agent
+
+# How to configure Jenkins
+```
+docker run -p 8080:8080 --user root -v /var/run/docker.sock:/var/run/docker.sock jenkinsci/blueocean
+```
+
+- open http://localhost:8080 and enter the password from the console
+- Choose Docker, Docker pipeline and Workspace Cleanup Plugin
+- Configure credentials (login and password) with id DockerHub
+- Create the Jenkins Job: New item -> Multibranch Pipeline -> Branch Sources -> Add source -> GitHub -> ->
+repository HTTPS URL -> Save
