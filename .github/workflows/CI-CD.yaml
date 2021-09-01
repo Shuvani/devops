@@ -3,8 +3,11 @@ name: Test moscow time project
 on: [push, pull_request]
 
 jobs:
+
   test:
+    name: Test application
     runs-on: ubuntu-20.04
+
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python 3.8.10
