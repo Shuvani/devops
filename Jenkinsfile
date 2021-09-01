@@ -16,6 +16,9 @@ pipeline {
         }
 
         stage('Deploy') {
+            when {
+                branch 'master'
+            }
             steps {
                 script {
                     dockerImage = docker.build(registry, "./app_python")
