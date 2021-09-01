@@ -7,3 +7,4 @@ app_python/__pycache__
 jenkins/
 terraform/.terraform/
 terraform/terraform.tfstate.d/
+terraform/.terraform.lock.hcl
