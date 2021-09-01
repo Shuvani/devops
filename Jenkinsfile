@@ -6,16 +6,10 @@ pipeline {
     agent any
     stages {
 
-        stage('Build') {
+        stage('Build, lint and test') {
             agent { docker { image 'python:3-slim' } }
             steps {
                 sh 'pip install --no-cache-dir -r app_python/requirements.txt'
-            }
-        }
-
-        stage('Linting and testing') {
-            agent { docker { image 'python:3-slim' } }
-            steps {
                 parallel(
                     lint: {
                         sh 'flake8 app_python/*.py'
