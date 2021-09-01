@@ -10,14 +10,8 @@ pipeline {
             agent { docker { image 'python:3-slim' } }
             steps {
                 sh 'pip install --no-cache-dir -r app_python/requirements.txt'
-                parallel(
-                    lint: {
-                        sh 'flake8 app_python/*.py'
-                    },
-                    test: {
-                        sh 'pytest app_python/test.py'
-                    }
-                )
+                sh 'flake8 app_python/*.py'
+                sh 'pytest app_python/test.py'
             }
         }
 
