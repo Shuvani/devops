@@ -38,7 +38,7 @@ jobs:
     name: Publish - Docker Hub
     runs-on: ubuntu-20.04
     needs: [test]
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/main'
 
     env:
       REPO: ${{ secrets.DOCKER_REPO }}
