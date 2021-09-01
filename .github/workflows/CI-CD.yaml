@@ -1,4 +1,4 @@
-name: Test moscow time project
+name: Test and Deploy moscow_time project
 
 on: [push, pull_request]
 

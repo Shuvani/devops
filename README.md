@@ -1,5 +1,7 @@
 # Moscow time
 
+![example workflow](https://github.com/Shuvani/devops/actions/workflows/CI-CD.yaml/badge.svg)
+
 ## About the project
 This is the web application which shows the current Moscow time when you reload the page
 
@@ -26,14 +28,14 @@ app_python$ pytest test.py
 ```
 app_python$ python3 main.py
 ```
-open http://0.0.0.0:8000/v3.4.1/ in the browser
+open http://0.0.0.0:8000/v3.4.2/ in the browser
 
 ## Getting started with Docker
 ```
-docker pull shuvani/moscow_time:3.4.1 // to update the version
-docker run -p 8000:8000 shuvani/moscow_time:3.4.1
+docker pull shuvani/moscow_time:3.4.2 // to update the version
+docker run -p 8000:8000 shuvani/moscow_time:3.4.2
 ```
-open http://0.0.0.0:8000/v3.4.1/ in the browser
+open http://0.0.0.0:8000/v3.4.2/ in the browser
 
 ## Contributing
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are greatly appreciated.
@@ -43,15 +45,6 @@ Contributions are what make the open source community such an amazing place to b
 3. Commit your Changes (git commit -m 'Add some AmazingFeature')
 4. Push to the Branch (git push origin feature/AmazingFeature)
 5. Open a Pull Request
-
-## Workflows:
-Before push or pull request in the main branch the code passes testing procedures
-
-![example workflow](https://github.com/Shuvani/devops/actions/workflows/publish.yaml/badge.svg)
-
-Before push in the release branches the application is published on the DockerHub
-
-![example workflow](https://github.com/Shuvani/devops/actions/workflows/testing.yaml/badge.svg)
 
 ## Contact
 Anna Gorb - a.gorb@innopolis.university
