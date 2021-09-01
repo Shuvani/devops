@@ -5,3 +5,5 @@ app_python/.coverage
 app_python/__pycache__
 .idea/
 jenkins/
+terraform/.terraform/
+terraform/terraform.tfstate.d/

@@ -1,14 +1,13 @@
 name: Test moscow time project
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+on: [push, pull_request]
 
 jobs:
-  test-job:
+
+  test:
+    name: Test application
     runs-on: ubuntu-20.04
+
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python 3.8.10
@@ -34,3 +33,28 @@ jobs:
     - name: Test with pytest
       run: |
         pytest app_python/test.py
+
+  docker:
+    name: Publish - Docker Hub
+    runs-on: ubuntu-20.04
+    needs: [test]
+    if: github.ref == 'refs/heads/main'
+
+    env:
+      REPO: ${{ secrets.DOCKER_REPO }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set variables
+        run: |
+          VER=$(sed -n 's/version=//p' app_python/setup.py | sed 's/"//' | sed 's/",//g' | sed 's/ //g')
+          echo "VERSION=$VER" >> $GITHUB_ENV
+      - name: Login to Docker Hub
+        run: docker login -u ${{ secrets.DOCKER_USER }}
+          -p ${{ secrets.DOCKER_PASS }}
+      - name: Build and push
+        id: docker_build
+        uses: docker/build-push-action@v2
+        with:
+          context: app_python/
+          push: true
+          tags: ${{ secrets.DOCKER_USER }}/moscow_time:${{ env.VERSION }}
