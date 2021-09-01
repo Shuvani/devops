@@ -1,23 +1,31 @@
-properties([pipelineTriggers([githubPush()])])
-
 pipeline {
-    agent { docker { image 'python:3-slim' } }
+    environment {
+        registry = "shuvani/moscow_time:3.3.2"
+        registryCredential = 'DockerHub'
+    }
+    agent any
     stages {
-        stage('Build') {
+
+        stage('Build, lint and test') {
+            agent { docker { image 'python:3-slim' } }
             steps {
                 sh 'pip install --no-cache-dir -r app_python/requirements.txt'
+                sh 'flake8 app_python/*.py'
+                sh 'pytest app_python/test.py'
             }
         }
-        stage('Linting and testing') {
+
+        stage('Deploy') {
+            when {
+                branch 'master'
+            }
             steps {
-                parallel(
-                    lint: {
-                        sh 'flake8 app_python/*.py'
-                    },
-                    test: {
-                        sh 'pytest app_python/test.py'
+                script {
+                    dockerImage = docker.build(registry, "./app_python")
+                    docker.withRegistry( '', registryCredential ) {
+                        dockerImage.push()
                     }
-                )
+                }
             }
         }
     }
