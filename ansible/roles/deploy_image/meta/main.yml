@@ -1,0 +1,16 @@
+galaxy_info:
+  role_name: deploy_image
+  author: Anna Gorb
+  description: this role will deploy docker image on the server
+  company: Innopolis Unversity
+  license: license (GPL-2.0-or-later, MIT, etc)
+  min_ansible_version: 2.1
+  platforms:
+    - name: Ubuntu
+      versions:
+        - xenial
+        - bionic
+        - focal
+  galaxy_tags: []
+
+dependencies: []

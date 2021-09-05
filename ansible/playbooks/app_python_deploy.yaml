@@ -1,0 +1,8 @@
+---
+- name: Deploy app_python to the server
+  hosts: aws_servers
+  become: true
+
+  roles:
+    - roles/install_docker
+#    - roles/deploy_image
