@@ -5,6 +5,6 @@ app_python/.coverage
 app_python/__pycache__
 .idea/
 jenkins/
-terraform/.terraform/
-terraform/terraform.tfstate.d/
-terraform/.terraform.lock.hcl
+terraform/dev/*/.terraform/
+terraform/dev/*/terraform.tfstate.d/
+terraform/dev/*/.terraform.lock.hcl

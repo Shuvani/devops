@@ -1,0 +1,5 @@
+---
+- name: Pull docker image
+  docker_image:
+    name: shuvani/moscow_time:latest
+    source: pull

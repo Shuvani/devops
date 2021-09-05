@@ -1,0 +1,43 @@
+---
+# https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04-ru
+- name: Ensure old versions of Docker are not installed
+  package:
+    name:
+      - docker
+      - docker-engine
+    state: absent
+
+- name: Install dependencies for HTTPS use
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - apt-transport-https
+    - ca-certificates
+    - curl
+    - software-properties-common
+    - python3-pip
+    - virtualenv
+    - python3-setuptools
+
+- name: Add GPG key
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+  ignore_errors: true
+
+- name: Add Docker repository
+  apt_repository:
+    repo: "{{ docker_apt_repository }}"
+    state: present
+
+- name: Install Docker
+  package:
+    name: "{{ docker_package }}"
+    state: present
+  notify: restart docker
+  ignore_errors: "{{ ansible_check_mode }}"
+
+- name: Install Docker Module for Python
+  pip:
+    name: docker

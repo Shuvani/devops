@@ -1,0 +1,16 @@
+galaxy_info:
+  role_name: install_docker
+  author: Anna Gorb
+  description: this role will install docker on the server
+  company: Innopolis Unversity
+  license: license (GPL-2.0-or-later, MIT, etc)
+  min_ansible_version: 2.1
+  platforms:
+    - name: Ubuntu
+      versions:
+        - xenial
+        - bionic
+        - focal
+  galaxy_tags: []
+
+dependencies: []
