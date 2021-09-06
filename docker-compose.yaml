@@ -1,0 +1,6 @@
+version: "3.3"
+services:
+  moscow_time:
+    image: shuvani/moscow_time:6.0.0
+    ports:
+      - 80:8000
