@@ -1,18 +1,18 @@
 ---
 - name: Create directory
   file:
-    path: /home/ubuntu/moscow_time
+    path: "{{ deploy_image_path }}"
     state: directory
     mode: '0755'
 
 - name: Copy docker-compose
   ansible.builtin.copy:
-    src: ../../../../docker-compose.yaml
-    dest: /home/ubuntu/moscow_time
+    src: templates/docker-compose.yml
+    dest: "{{ deploy_image_path }}"
     mode: '0755'
 
 - name: Run docker-compose up
   community.docker.docker_compose:
-    project_src: /home/ubuntu/moscow_time/
+    project_src: "{{ deploy_image_path }}"
     build: false
   register: output
