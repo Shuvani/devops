@@ -8,3 +8,8 @@ docker_apt_arch: amd64
 # Docker package - community edition
 docker_package: "docker-{{ docker_edition }}"
 docker_edition: 'ce'
+
+# docker-compose
+docker_compose_url: https://github.com/docker/compose/releases/download/{{ docker_compose_version }}/docker-compose-Linux-x86_64
+docker_compose_path: /usr/local/bin/docker-compose
+docker_compose_version: "1.26.0"

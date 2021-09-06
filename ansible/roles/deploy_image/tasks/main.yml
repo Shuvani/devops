@@ -1,5 +1,18 @@
 ---
-- name: Pull docker image
-  docker_image:
-    name: shuvani/moscow_time:latest
-    source: pull
+- name: Create directory
+  file:
+    path: /home/ubuntu/moscow_time
+    state: directory
+    mode: '0644'
+
+- name: Copy docker-compose
+  ansible.builtin.copy:
+    src: ../../../../docker-compose.yaml
+    dest: /home/ubuntu/moscow_time
+    mode: '0644'
+
+- name: Run docker-compose up
+  community.docker.docker_compose:
+    project_src: /home/ubuntu/moscow_time/
+    build: false
+  register: output

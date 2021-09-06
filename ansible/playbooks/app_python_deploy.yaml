@@ -5,4 +5,4 @@
 
   roles:
     - roles/install_docker
-#    - roles/deploy_image
+    - roles/deploy_image
