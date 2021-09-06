@@ -1,15 +1,23 @@
 ---
+- name: Prune everything
+  community.docker.docker_prune:
+    containers: yes
+    images: yes
+    networks: yes
+    volumes: yes
+    builder_cache: yes
+
 - name: Create directory
   file:
     path: /home/ubuntu/moscow_time
     state: directory
-    mode: '0644'
+    mode: '0755'
 
 - name: Copy docker-compose
   ansible.builtin.copy:
     src: ../../../../docker-compose.yaml
     dest: /home/ubuntu/moscow_time
-    mode: '0644'
+    mode: '0755'
 
 - name: Run docker-compose up
   community.docker.docker_compose:

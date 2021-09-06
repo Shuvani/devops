@@ -1,2 +1,2 @@
 [aws_servers]
-moscow_time1 ansible_host=54.245.33.20 ansible_user=ubuntu ansible_ssh_private_key_file=/home/shuva/.ssh/DevopsKey.pem
+moscow_time1 ansible_host=18.236.127.132 ansible_user=ubuntu ansible_ssh_private_key_file=/home/shuva/.ssh/DevopsKey.pem
