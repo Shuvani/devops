@@ -1,6 +1,6 @@
-# Results
-![Labels](first.png)
-![Logs](second.png)
+# Loki results
+![Labels](pic/7-1.png)
+![Logs](pic/7-2.png)
 
 # Best practices
 

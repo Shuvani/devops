@@ -6,7 +6,7 @@ networks:
 services:
 
   app:
-    image: shuvani/moscow_time:7.0.0
+    image: shuvani/moscow_time:7.0.1
     ports:
       - 8000:8000
     networks:
@@ -23,9 +23,6 @@ services:
       - "3100:3100"
     networks:
       - logs_network
-    volumes:
-      - ./loki.yml:/etc/loki.yml
-    command: -config.file=/etc/loki.yml
 
   promtail:
     image: grafana/promtail:2.3.0
