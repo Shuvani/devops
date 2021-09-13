@@ -1,7 +1,6 @@
 server:
   http_listen_port: 9080
   grpc_listen_port: 0
-  log_level: warn
 
 client:
   url: http://loki:3100/api/prom/push
@@ -13,7 +12,7 @@ scrape_configs:
       - targets:
           - localhost
         labels:
-          job: docker
+          job: moscow_time_logs
           __path__: /var/lib/docker/containers/*/*log
 
     pipeline_stages:
