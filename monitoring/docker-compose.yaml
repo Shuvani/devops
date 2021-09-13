@@ -1,0 +1,46 @@
+version: '3'
+
+networks:
+  logs_network:
+
+services:
+
+  app:
+    image: shuvani/moscow_time:7.0.0
+    ports:
+      - 8000:8000
+    networks:
+      - logs_network
+    command: python3 main.py
+    logging:
+      driver: "json-file"
+      options:
+        tag: "{{.ImageName}}|{{.Name}}"
+
+  loki:
+    image: grafana/loki:2.3.0
+    ports:
+      - "3100:3100"
+    networks:
+      - logs_network
+    volumes:
+      - ./loki.yml:/etc/loki.yml
+    command: -config.file=/etc/loki.yml
+
+  promtail:
+    image: grafana/promtail:2.3.0
+    ports:
+      - "9080:9080"
+    networks:
+      - logs_network
+    volumes:
+      - /var/lib/docker/containers:/var/lib/docker/containers
+      - ./promtail.yml:/etc/promtail.yml
+    command: -config.file=/etc/promtail.yml
+
+  grafana:
+    image: grafana/grafana:8.1.0
+    ports:
+      - "3000:3000"
+    networks:
+      - logs_network
