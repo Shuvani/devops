@@ -41,3 +41,18 @@ services:
       - "3000:3000"
     networks:
       - logs_network
+
+  prometheus:
+    image: prom/prometheus:v2.28.0
+    ports:
+      - 9090:9090
+    networks:
+      - logs_network
+    command:
+      - --config.file=/etc/prometheus.yml
+    volumes:
+      - ./prometheus.yml:/etc/prometheus.yml
+    logging:
+      driver: "json-file"
+      options:
+        tag: "{{.ImageName}}|{{.Name}}"

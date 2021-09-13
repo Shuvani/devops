@@ -11,3 +11,8 @@
 - Logs are in increasing time order
 - -log-config-reverse-order was used automatically
 - Write target because early versions use it
+
+# Prometheus results
+![Labels](pic/8-1.png)
+![Logs](pic/8-2.png)
+![Logs](pic/8-3.png)
