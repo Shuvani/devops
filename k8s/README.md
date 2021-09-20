@@ -1,7 +1,7 @@
 # Screenshots after console commands
 ![Logs](pic/9-1.png)
 
-# Screenshots after scripts command
+# Screenshots after scripts commands
 ![Logs](pic/9-2.png)
 
 # How to use
