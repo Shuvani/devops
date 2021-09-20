@@ -17,7 +17,7 @@ x-deploy:
 services:
 
   app:
-    image: shuvani/moscow_time:9.0.0
+    image: shuvani/moscow_time:9.0.1
     ports:
       - 8000:8000
     networks:
