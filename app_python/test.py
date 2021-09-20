@@ -14,5 +14,5 @@ def test__get__moscow__time__returns__time():
 
 def test__index__get_request__returns_200():
     # basic integration test
-    request, response = app.test_client.get("/v8.0.1/")
+    request, response = app.test_client.get("/v9.0.0/")
     assert response.status == 200
