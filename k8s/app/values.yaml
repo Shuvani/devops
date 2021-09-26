@@ -1,14 +1,14 @@
-# Default values for moscow-time.
+# Default values for app.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-replicaCount: 3
+replicaCount: 1
 
 image:
-  repository: shuvani/moscow_time
+  repository: nginx
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: 11.0.0
+  tag: ""
 
 imagePullSecrets: []
 nameOverride: ""
@@ -39,7 +39,6 @@ securityContext: {}
 service:
   type: ClusterIP
   port: 80
-  targetPort: 8000
 
 ingress:
   enabled: false
