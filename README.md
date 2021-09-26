@@ -3,7 +3,7 @@
 ![example workflow](https://github.com/Shuvani/devops/actions/workflows/CI-CD.yaml/badge.svg)
 
 ## About the project
-This is the web application which shows the current Moscow time when you reload the page: http://18.236.127.132/v11.0.0/
+This is the web application which shows the current Moscow time when you reload the page: http://18.236.127.132/v11.0.1/
 
 ## Built with
 - python
@@ -28,14 +28,14 @@ app_python$ pytest test.py
 ```
 app_python$ python3 main.py
 ```
-open http://0.0.0.0:8000/v11.0.0/ in the browser
+open http://0.0.0.0:8000/v11.0.1/ in the browser
 
 ## Getting started with Docker
 ```
-docker pull shuvani/moscow_time:10.0.0 // to update the version
-docker run -p 8000:8000 shuvani/moscow_time:10.0.0
+docker pull shuvani/moscow_time:11.0.1 // to update the version
+docker run -p 8000:8000 shuvani/moscow_time:11.0.1
 ```
-open http://0.0.0.0:8000/v11.0.0/ in the browser
+open http://0.0.0.0:8000/v11.0.1/ in the browser
 
 ## Contributing
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are greatly appreciated.

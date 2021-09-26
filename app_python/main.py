@@ -17,7 +17,7 @@ def get_moscow_time():
     return moscow_time
 
 
-@app.route("/", version="11.0.0")
+@app.route("/", version="11.0.1")
 async def index(request):
     """API to render html file and pass parameters in it"""
     text = "This is the current Moscow time!"
