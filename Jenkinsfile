@@ -1,6 +1,6 @@
 pipeline {
     environment {
-        registry = "shuvani/moscow_time:12.0.3"
+        registry = "shuvani/moscow_time:12.0.4"
         registryCredential = 'DockerHub'
     }
     agent any
