@@ -1,7 +1,9 @@
 version: "3.3"
 services:
   moscow_time:
-    image: shuvani/moscow_time:11.0.1
+    image: shuvani/moscow_time:12.0.0
     ports:
       - 80:8000
     command: python3 main.py
+    volumes:
+      - /home/ubuntu/moscow_time/time.txt:/time.txt
