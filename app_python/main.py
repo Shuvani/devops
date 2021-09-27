@@ -18,7 +18,7 @@ def get_moscow_time():
 
 
 def write_time_in_file(time):
-    f = open("/home/ubuntu/moscow_time/files/time.txt", "w")
+    f = open("/home/time.txt", "w")
     f.write(time)
     f.close()
 
@@ -38,7 +38,7 @@ async def index(request):
 async def index(request):
     """API to render html file and pass parameters in it"""
     text = "This is the time of your last visit!"
-    f = open("/home/ubuntu/moscow_time/files/time.txt", "r")
+    f = open("/home/time.txt", "r")
     time = f.read()
     f.close()
     author = "developed by Anna Gorb"
