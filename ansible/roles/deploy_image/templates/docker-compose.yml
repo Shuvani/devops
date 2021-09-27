@@ -5,5 +5,3 @@ services:
     ports:
       - 80:8000
     command: python3 main.py
-    volumes:
-      - ../../../../app_python/files/:/home/ubuntu/moscow_time/files/
