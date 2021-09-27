@@ -28,13 +28,13 @@ app_python$ pytest test.py
 ```
 app_python$ python3 main.py
 ```
-open http://0.0.0.0:8000/v12.4.0/ in the browser
+open http://0.0.0.0:8000/v12.4.1/ in the browser
 
 ## Getting started with Docker-compose
 ```
 app_python$ docker-compose up
 ```
-open http://0.0.0.0:8000/v12.4.0/ in the browser
+open http://0.0.0.0:8000/v12.4.1/ in the browser
 
 ## Contributing
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are greatly appreciated.

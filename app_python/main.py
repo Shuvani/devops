@@ -23,7 +23,7 @@ def write_time_in_file(time):
     f.close()
 
 
-@app.route("/", version="12.4.0")
+@app.route("/", version="12.4.1")
 async def index(request):
     write_time_in_file(get_moscow_time())
     return jinja.render("index.html",
@@ -34,7 +34,7 @@ async def index(request):
                         )
 
 
-@app.route("/visits", version="12.4.0")
+@app.route("/visits", version="12.4.1")
 async def index(request):
     """API to render html file and pass parameters in it"""
     text = "This is the time of your last visit!"
