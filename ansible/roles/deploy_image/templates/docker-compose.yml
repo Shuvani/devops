@@ -6,4 +6,4 @@ services:
       - 80:8000
     command: python3 main.py
     volumes:
-      - /home/ubuntu/moscow_time/files/:/files/
+      - /home/ubuntu/moscow_time/files/time.txt:./files/time.txt
