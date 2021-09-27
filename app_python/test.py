@@ -10,9 +10,3 @@ def test__get__moscow__time__returns__string():
 def test__get__moscow__time__returns__time():
     moscow_time = main.get_moscow_time()
     assert moscow_time[2] == ":"
-
-
-def test__index__get_request__returns_200():
-    # basic integration test
-    request, response = app.test_client.get("/v12.0.0/")
-    assert response.status == 200
