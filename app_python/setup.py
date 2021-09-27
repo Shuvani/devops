@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="devops",
-    version="12.2.0",
+    version="12.3.0",
     author='shuva',
     author_email='a.gorb@innopolis.university',
     description='This app shows the current Moscow time'
