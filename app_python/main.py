@@ -18,12 +18,12 @@ def get_moscow_time():
 
 
 def write_time_in_file(time):
-    f = open("/files/time.txt", "w")
+    f = open("/home/ubuntu/moscow_time/files/time.txt", "w")
     f.write(time)
     f.close()
 
 
-@app.route("/", version="12.0.4")
+@app.route("/", version="12.1.0")
 async def index(request):
     write_time_in_file(get_moscow_time())
     return jinja.render("index.html",
@@ -34,11 +34,11 @@ async def index(request):
                         )
 
 
-@app.route("/visits", version="12.0.4")
+@app.route("/visits", version="12.1.0")
 async def index(request):
     """API to render html file and pass parameters in it"""
     text = "This is the time of your last visit!"
-    f = open("/files/time.txt", "r")
+    f = open("/home/ubuntu/moscow_time/files/time.txt", "r")
     time = f.read()
     f.close()
     author = "developed by Anna Gorb"
