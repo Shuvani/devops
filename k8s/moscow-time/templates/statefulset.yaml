@@ -48,11 +48,24 @@ spec:
                   name: credentials
                   key: password
           volumeMounts:
+            - name: workdir
+              mountPath: "/workdir"
             - name: moscow-time-volume
               mountPath: "/home/"
             - name: config-volume
               mountPath: /config.json
               subPath: config.json
+      initContainers:
+        - name: install
+          image: busybox
+          command:
+            - wget
+            - "-O"
+            - "/work-dir/index.html"
+            - http://info.cern.ch
+          volumeMounts:
+            - name: workdir
+              mountPath: "/work-dir"
       volumes:
         - name: config-volume
           configMap:
